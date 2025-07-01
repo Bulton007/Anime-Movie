@@ -1,0 +1,1530 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: black;
+}
+:root{
+    --sub-color: linear-gradient(90deg, #ff9800 30%, #ff5722 var(--full-size));
+}
+.hero{
+    height: 100vh;
+    width: 100%;
+    & video{
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+        top: 14.5%;
+    }
+    height: 100vh;
+    width: 100%;
+    & .header{
+        font-family: Algerian;
+        position: fixed; 
+        top: 0;
+        z-index: 1;
+        background-color: rgb(20, 19, 19);
+        height: 15vh;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        place-items: center;
+        & img{
+            height: 500px;
+            width: 400px;
+        }
+        & ul{
+            display: flex;
+            gap: 50px;
+            & li{
+                position: relative;
+                list-style: none;
+            }
+            & a{
+                text-decoration: none;
+                color:white;
+                font-size: 30px;
+                position: relative;
+                display: block;
+                transition: all 0.3s;
+            }
+            & a:hover{
+                color: orange;
+                transition: color 0.3s;
+                transform: scale(0.95);
+                transition: transform 0.3s;
+            }
+            & .dropdown{
+                width: 130px;
+                height: auto;
+                background-color:black ;
+                position: absolute;
+                display: none;
+            }
+            & li:hover >.dropdown{
+                display: block;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+                
+            }
+            & li:hover >.dropdown>a{
+                transform: scale(0.95);
+                transition: transform 0.3s;
+            }
+            
+        }
+       & form{
+        display: flex;
+        gap: 10px;
+         & .search{
+            width: 300px;
+            height: 35px;
+            display: flex;
+            & input{
+                width: 300px;
+                height: 35px;
+                border-radius: 7px;
+                border-color: aliceblue;
+                background-color: transparent;
+                padding: 0 10px;
+                font-size: 18px;
+            }
+            & #icon{
+                right: 7%;
+                margin-top: 8px;
+                position: fixed;
+                color: aliceblue;
+                
+            }
+        }
+        & button{
+            width: 100px;
+            border: none;
+            border-radius: 7px;
+            background-color: orange;
+
+        }
+       }
+    }
+    & .hero_text{
+        position: absolute;
+        top: 50%;
+        left: 38%;
+        font-family: Algerian;
+        & h1{
+            font-size: 80px;
+            font-weight: 300;
+            color: aliceblue;
+        }
+        & span{
+            font-size: 80px;
+            font-weight: 300;
+            color: orange;
+        }
+        & p{
+            margin-top: 10px; 
+            font-size: 30px;
+            color:aliceblue;
+        }
+        & a{
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: orange;
+        }
+        & button{
+            margin-top: 50px;
+            padding: 5px 30px; 
+            border-radius: 8px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid orange;
+        }
+        & a:hover{
+            color: white;
+        }
+        & button:hover{
+            background-color: orange;
+            color: white;
+            transition: 0.3s; 
+        }
+    }
+}
+.content{
+    
+    width: 95%;
+    height: 60vh;
+    margin: auto;
+    z-index: -1;
+    margin-top: 174px; 
+    & p{
+        color: yellow;
+        font-size: 50px;
+        & span{
+        color: white;
+        font-size: 30px;
+        }
+    }
+    & .card{
+        width: 100%;
+        height: 90%;
+        display: flex;
+        gap: 50px;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        scrollbar-width: none;
+        & .post{
+            width: 300px;
+            height: 90%;
+            position: relative;
+            flex: 0 0 auto;
+            & img{
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+                position: relative;
+                border-radius: 10px;
+            }
+            & .sub-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 80px;
+                overflow: hidden;
+                text-align: center;
+                place-items: center;
+                align-items: center;
+            }
+
+            & .sub-left {
+                position: absolute;
+                top: 15px;
+                left: -30px;
+                width: 115px;
+                height: 30px;
+                background: linear-gradient(to bottom right, #ff9800 30%, #ff5722);
+                color: white;
+                text-align: center;
+                transform: rotate(-45deg);
+                font-weight: 900;
+                align-items: center;
+                font-size: 20px;
+                padding-top: 3px; 
+            }
+            & .new{
+                background-color: orange;
+                position: absolute;
+                top: 1.5%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .year{
+                background-color: orange;
+                position: absolute;
+                bottom: 12%;
+                left: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .morng{
+                background-color: gray; 
+                position: absolute;
+                bottom: 12%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & h1{
+                position: absolute;
+                bottom: 2%;
+                left: 1%;
+                color: white;
+                font-size: 33px;
+                transition: color 0.3s;
+            }
+            & h1:hover{
+                color: orange;
+                transition: color 0.3s;
+            }
+
+        }
+    }
+}
+.new_mv{
+    margin: auto;
+    top:4%; 
+    width: 95%;
+    height: 100vh;
+    position: relative;
+    & p{
+        color: yellow;
+        font-size: 50px;
+        & span{
+        color: white;
+        font-size: 30px;
+        }
+    }
+    & .new_card{
+        width: 100%;
+        height: 90%;
+        margin-top: 30px ;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 80px;
+        animation: scrolldown both;
+        animation-timeline: view();
+        animation-range: entry 20% cover 50% ;
+        & .post_1{
+            width: 480px;
+            height: 250px;
+            display: flex;
+            gap: 20px;
+            position: relative;
+            & .item{
+                width: 50%;
+                height: 100%;
+                position: relative;
+                & img{
+                    height: 100%;
+                    width: 100%;
+                    position: relative;
+                    border-radius: 10px;
+                }
+                
+                & .sub-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 80px;
+                overflow: hidden;
+                text-align: center;
+                place-items: center;
+                align-items: center;
+            }
+
+            & .sub-left {
+                position: absolute;
+                top: 15px;
+                left: -30px;
+                width: 115px;
+                height: 30px;
+                background: linear-gradient(to bottom right, #ff9800 30%, #ff5722);
+                color: white;
+                text-align: center;
+                transform: rotate(-45deg);
+                font-weight: 900;
+                align-items: center;
+                font-size: 10px;
+                padding: 8px 20px; 
+
+            }
+            }
+        & .text_title{
+            width: 50%;
+            height: 100%;
+            & p{
+                font-size: 18px;
+                font-weight: normal;
+                color: gray;
+                padding: 10px;
+            }
+            & h1{
+                font-size: 30px;
+                color: white;
+                font-weight: 300;
+                margin-left: 6px;
+            }
+            & button{
+                margin-left: 6px;
+                background-color: transparent;
+                border: 2px solid orange;
+                color: orange;
+                border-radius: 5px;
+                font-size: 20px;
+                padding: 5px 20px;
+            }
+            & button:hover{
+            background-color: orange;
+            color: white;
+            transition: 0.3s; 
+            }
+        }
+        }
+    }
+}
+.tv_show{
+    height: 100vh;
+    width: 100%;
+    /* background-color: #ff5722; */
+    margin-top: 100px;
+    position: relative;
+    & .tx{
+        width: 100%;
+        height: 6vh;
+        & h1{
+            text-align: center;
+            color: white;
+            font-weight: 900;
+            font-size: 40px;
+        }
+    }
+    & .mv_show{
+        position: relative;
+        width: 100%;
+         & p{
+        color: yellow;
+        font-size: 50px;
+        & span{
+        color: white;
+        font-size: 30px;
+        }
+    }
+    & .tv_show_card{
+        margin-top: 20px;
+         width: 100%;
+        height: 90%;
+        margin-top: 30px ;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+            & .post{
+            width: 350px;
+            height: 90%;
+            position: relative;
+            flex: 0 0 auto;
+            & img{
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+                position: relative;
+                border-radius: 10px;
+            }
+            & .sub-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 80px;
+                overflow: hidden;
+                text-align: center;
+                place-items: center;
+                align-items: center;
+            }
+
+            & .sub-left {
+                position: absolute;
+                top: 15px;
+                left: -30px;
+                width: 115px;
+                height: 30px;
+                background: linear-gradient(to bottom right, #ff9800 30%, #ff5722);
+                color: white;
+                text-align: center;
+                transform: rotate(-45deg);
+                font-weight: 900;
+                align-items: center;
+                font-size: 20px;
+                padding-top: 3px; 
+            }
+            & .new{
+                background-color: orange;
+                position: absolute;
+                top: 1.5%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .year{
+                background-color: orange;
+                position: absolute;
+                bottom: 12%;
+                left: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .morng{
+                background-color: gray; 
+                position: absolute;
+                bottom: 12%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & h1{
+                position: relative;
+                bottom: 2%;
+                left: 1%;
+                color: white;
+                font-size: 33px;
+                transition: color 0.3s;
+            }
+            & h1:hover{
+                color: orange;
+                transition: color 0.3s;
+            }
+
+        }
+    }
+    & .hero_mv_show{
+            width: 100%;
+            height: 68vh;
+            background-image: url(../public/IMG/demon__.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: auto;
+            margin-top: 20px;
+            & .text{
+            position: absolute;
+        top: 15%;
+        left: 25%;
+        font-family: Algerian;
+        & h1{
+            font-size: 80px;
+            font-weight: 500;
+            color: white;
+        }
+        & span{
+            font-size: 80px;
+            font-weight: 300;
+            color: orange;
+        }
+        & p{
+            margin-top: 10px; 
+            font-size: 30px;
+            color:white;
+        }
+        & a{
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: orange;
+        }
+        & button{
+            margin-top: 50px;
+            padding: 5px 30px; 
+            border-radius: 8px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid orange;
+        }
+        & a:hover{
+            color: white;
+        }
+        & button:hover{
+            background-color: orange;
+            color: white;
+            transition: 0.3s; 
+        }
+            }
+        }
+    }
+    & .mv_show0{
+        position: relative;
+        width: 100%;
+         & p{
+        color: yellow;
+        font-size: 50px;
+        & span{
+        color: white;
+        font-size: 30px;
+        }
+    }
+    & .tv_show_card{
+        margin-top: 20px;
+         width: 100%;
+        height: 90%;
+        margin-top: 30px ;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+            & .post{
+            width: 350px;
+            height: 90%;
+            position: relative;
+            flex: 0 0 auto;
+            & img{
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+                position: relative;
+                border-radius: 10px;
+            }
+            & .sub-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 80px;
+                overflow: hidden;
+                text-align: center;
+                place-items: center;
+                align-items: center;
+            }
+
+            & .sub-left {
+                position: absolute;
+                top: 15px;
+                left: -30px;
+                width: 115px;
+                height: 30px;
+                background: linear-gradient(to bottom right, #ff9800 30%, #ff5722);
+                color: white;
+                text-align: center;
+                transform: rotate(-45deg);
+                font-weight: 900;
+                align-items: center;
+                font-size: 20px;
+                padding-top: 3px; 
+            }
+            & .new{
+                background-color: orange;
+                position: absolute;
+                top: 1.5%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .year{
+                background-color: orange;
+                position: absolute;
+                bottom: 12%;
+                left: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .morng{
+                background-color: gray; 
+                position: absolute;
+                bottom: 12%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & h1{
+                position: relative;
+                bottom: 2%;
+                left: 1%;
+                color: white;
+                font-size: 33px;
+                transition: color 0.3s;
+            }
+            & h1:hover{
+                color: orange;
+                transition: color 0.3s;
+            }
+
+        }
+    }
+    & .hero_mv_show{
+            width: 100%;
+            height: 68vh;
+            background-image: url(../public/IMG/naruto\ wall.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: cneter;
+            margin: auto;
+            margin-top: 20px;
+            & .text{
+        position: absolute;
+        top: 15%;
+        left: 25%;
+        font-family: Algerian;
+        & h1{
+            font-size: 80px;
+            font-weight: 300;
+            color: aliceblue;
+        }
+        & span{
+            font-size: 80px;
+            font-weight: 300;
+            color: orange;
+        }
+        & p{
+            margin-top: 10px; 
+            font-size: 30px;
+            color:aliceblue;
+        }
+        & a{
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: orange;
+        }
+        & button{
+            margin-top: 50px;
+            padding: 5px 30px; 
+            border-radius: 8px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid orange;
+        }
+        & a:hover{
+            color: white;
+        }
+        & button:hover{
+            background-color: orange;
+            color: white;
+            transition: 0.3s; 
+        }
+            }
+        }
+    }
+    & .mv_show1{
+        position: relative;
+        width: 100%;
+         & p{
+        color: yellow;
+        font-size: 50px;
+        & span{
+        color: white;
+        font-size: 30px;
+        }
+    }
+    & .tv_show_card{
+        margin-top: 20px;
+         width: 100%;
+        height: 90%;
+        margin-top: 30px ;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+            & .post{
+            width: 350px;
+            height: 90%;
+            position: relative;
+            flex: 0 0 auto;
+            & img{
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+                position: relative;
+                border-radius: 10px;
+            }
+            & .sub-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 80px;
+                overflow: hidden;
+                text-align: center;
+                place-items: center;
+                align-items: center;
+            }
+
+            & .sub-left {
+                position: absolute;
+                top: 15px;
+                left: -30px;
+                width: 115px;
+                height: 30px;
+                background: linear-gradient(to bottom right, #ff9800 30%, #ff5722);
+                color: white;
+                text-align: center;
+                transform: rotate(-45deg);
+                font-weight: 900;
+                align-items: center;
+                font-size: 20px;
+                padding-top: 3px; 
+            }
+            & .new{
+                background-color: orange;
+                position: absolute;
+                top: 1.5%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .year{
+                background-color: orange;
+                position: absolute;
+                bottom: 12%;
+                left: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .morng{
+                background-color: gray; 
+                position: absolute;
+                bottom: 12%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & h1{
+                position: relative;
+                bottom: 2%;
+                left: 1%;
+                color: white;
+                font-size: 33px;
+                transition: color 0.3s;
+            }
+            & h1:hover{
+                color: orange;
+                transition: color 0.3s;
+            }
+
+        }
+    }
+    & .hero_mv_show{
+            width: 100%;
+            height: 68vh;
+            background-image: url(../public/IMG/SOlO\ wall.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: auto;
+            margin-top: 20px;
+            & .text{
+        position: absolute;
+        top: 15%;
+        left: 25%;
+        font-family: Algerian;
+        & h1{
+            font-size: 80px;
+            font-weight: 300;
+            color: aliceblue;
+        }
+        & span{
+            font-size: 80px;
+            font-weight: 300;
+            color: orange;
+        }
+        & p{
+            margin-top: 10px; 
+            font-size: 30px;
+            color:aliceblue;
+        }
+        & a{
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: orange;
+        }
+        & button{
+            margin-top: 50px;
+            padding: 5px 30px; 
+            border-radius: 8px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid orange;
+        }
+        & a:hover{
+            color: white;
+        }
+        & button:hover{
+            background-color: orange;
+            color: white;
+            transition: 0.3s; 
+        }
+            }
+        }
+    }
+    & .mv_show2{
+        position: relative;
+        width: 100%;
+         & p{
+        color: yellow;
+        font-size: 50px;
+        & span{
+        color: white;
+        font-size: 30px;
+        }
+    }
+    & .tv_show_card{
+        margin-top: 20px;
+         width: 100%;
+        height: 90%;
+        margin-top: 30px ;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+            & .post{
+            width: 350px;
+            height: 90%;
+            position: relative;
+            flex: 0 0 auto;
+            & img{
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+                position: relative;
+                border-radius: 10px;
+            }
+            & .sub-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 80px;
+                overflow: hidden;
+                text-align: center;
+                place-items: center;
+                align-items: center;
+            }
+
+            & .sub-left {
+                position: absolute;
+                top: 15px;
+                left: -30px;
+                width: 115px;
+                height: 30px;
+                background: linear-gradient(to bottom right, #ff9800 30%, #ff5722);
+                color: white;
+                text-align: center;
+                transform: rotate(-45deg);
+                font-weight: 900;
+                align-items: center;
+                font-size: 20px;
+                padding-top: 3px; 
+            }
+            & .new{
+                background-color: orange;
+                position: absolute;
+                top: 1.5%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .year{
+                background-color: orange;
+                position: absolute;
+                bottom: 12%;
+                left: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .morng{
+                background-color: gray; 
+                position: absolute;
+                bottom: 12%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & h1{
+                position: relative;
+                bottom: 2%;
+                left: 1%;
+                color: white;
+                font-size: 33px;
+                transition: color 0.3s;
+            }
+            & h1:hover{
+                color: orange;
+                transition: color 0.3s;
+            }
+
+        }
+    }
+    & .hero_mv_show{
+            width: 100%;
+            height: 68vh;
+            background-image: url(../public/IMG/aotwall.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: auto;
+            margin-top: 20px;
+            & .text{
+        position: absolute;
+        top: 15%;
+        left: 25%;
+        font-family: Algerian;
+        & h1{
+            font-size: 80px;
+            font-weight: 300;
+            color: aliceblue;
+        }
+        & span{
+            font-size: 80px;
+            font-weight: 300;
+            color: orange;
+        }
+        & p{
+            margin-top: 10px; 
+            font-size: 30px;
+            color:aliceblue;
+        }
+        & a{
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: orange;
+        }
+        & button{
+            margin-top: 50px;
+            padding: 5px 30px; 
+            border-radius: 8px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid orange;
+        }
+        & a:hover{
+            color: white;
+        }
+        & button:hover{
+            background-color: orange;
+            color: white;
+            transition: 0.3s; 
+        }
+            }
+        }
+    }
+    & .mv_show3{
+        position: relative;
+        width: 100%;
+         & p{
+        color: yellow;
+        font-size: 50px;
+        & span{
+        color: white;
+        font-size: 30px;
+        }
+    }
+    & .tv_show_card{
+        margin-top: 20px;
+         width: 100%;
+        height: 90%;
+        margin-top: 30px ;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+            & .post{
+            width: 350px;
+            height: 90%;
+            position: relative;
+            flex: 0 0 auto;
+            & img{
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+                position: relative;
+                border-radius: 10px;
+            }
+            & .sub-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 80px;
+                overflow: hidden;
+                text-align: center;
+                place-items: center;
+                align-items: center;
+            }
+
+            & .sub-left {
+                position: absolute;
+                top: 15px;
+                left: -30px;
+                width: 115px;
+                height: 30px;
+                background: linear-gradient(to bottom right, #ff9800 30%, #ff5722);
+                color: white;
+                text-align: center;
+                transform: rotate(-45deg);
+                font-weight: 900;
+                align-items: center;
+                font-size: 20px;
+                padding-top: 3px; 
+            }
+            & .new{
+                background-color: orange;
+                position: absolute;
+                top: 1.5%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .year{
+                background-color: orange;
+                position: absolute;
+                bottom: 12%;
+                left: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .morng{
+                background-color: gray; 
+                position: absolute;
+                bottom: 12%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & h1{
+                position: relative;
+                bottom: 2%;
+                left: 1%;
+                color: white;
+                font-size: 33px;
+                transition: color 0.3s;
+            }
+            & h1:hover{
+                color: orange;
+                transition: color 0.3s;
+            }
+
+        }
+    }
+    & .hero_mv_show{
+            width: 100%;
+            height: 68vh;
+            background-image: url(../public/IMG/jujutsuwall.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: auto;
+            margin-top: 20px;
+            & .text{
+        position: absolute;
+        top: 15%;
+        left: 25%;
+        font-family: Algerian;
+        & h1{
+            font-size: 80px;
+            font-weight: 300;
+            color: aliceblue;
+        }
+        & span{
+            font-size: 80px;
+            font-weight: 300;
+            color: orange;
+        }
+        & p{
+            margin-top: 10px; 
+            font-size: 30px;
+            color:aliceblue;
+        }
+        & a{
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: orange;
+        }
+        & button{
+            margin-top: 50px;
+            padding: 5px 30px; 
+            border-radius: 8px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid orange;
+        }
+        & a:hover{
+            color: white;
+        }
+        & button:hover{
+            background-color: orange;
+            color: white;
+            transition: 0.3s; 
+        }
+            }
+        }
+    }
+    & .mv_show4{
+        position: relative;
+        width: 100%;
+         & p{
+        color: yellow;
+        font-size: 50px;
+        & span{
+        color: white;
+        font-size: 30px;
+        }
+    }
+    & .tv_show_card{
+        margin-top: 20px;
+         width: 100%;
+        height: 90%;
+        margin-top: 30px ;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+            & .post{
+            width: 350px;
+            height: 90%;
+            position: relative;
+            flex: 0 0 auto;
+            & img{
+                width: 100%;
+                height: 90%;
+                object-fit: cover;
+                position: relative;
+                border-radius: 10px;
+            }
+            & .sub-wrapper {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100px;
+                height: 80px;
+                overflow: hidden;
+                text-align: center;
+                place-items: center;
+                align-items: center;
+            }
+
+            & .sub-left {
+                position: absolute;
+                top: 15px;
+                left: -30px;
+                width: 115px;
+                height: 30px;
+                background: linear-gradient(to bottom right, #ff9800 30%, #ff5722);
+                color: white;
+                text-align: center;
+                transform: rotate(-45deg);
+                font-weight: 900;
+                align-items: center;
+                font-size: 20px;
+                padding-top: 3px; 
+            }
+            & .new{
+                background-color: orange;
+                position: absolute;
+                top: 1.5%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .year{
+                background-color: orange;
+                position: absolute;
+                bottom: 12%;
+                left: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & .morng{
+                background-color: gray; 
+                position: absolute;
+                bottom: 12%;
+                right: 2%;
+                padding: 6px 10px;
+                color: white;
+                font-weight: 900;
+                width: 80px;
+                text-align: center;
+                height: 30px;
+                border-radius: 5px;
+            }
+            & h1{
+                position: relative;
+                bottom: 2%;
+                left: 1%;
+                color: white;
+                font-size: 33px;
+                transition: color 0.3s;
+            }
+            & h1:hover{
+                color: orange;
+                transition: color 0.3s;
+            }
+
+        }
+    }
+    & .hero_mv_show{
+            width: 100%;
+            height: 68vh;
+            background-image: url(https://wallpapercave.com/wp/wp2370929.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            margin: auto;
+            margin-top: 20px;
+            & .text{
+        position: absolute;
+        top: 15%;
+        left: 25%;
+        font-family: Algerian;
+        & h1{
+            font-size: 80px;
+            font-weight: 300;
+            color: aliceblue;
+        }
+        & span{
+            font-size: 80px;
+            font-weight: 300;
+            color: orange;
+        }
+        & p{
+            margin-top: 10px; 
+            font-size: 30px;
+            color:aliceblue;
+        }
+        & a{
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: 600;
+            color: orange;
+        }
+        & button{
+            margin-top: 50px;
+            padding: 5px 30px; 
+            border-radius: 8px;
+            height: 50px;
+            background-color: transparent;
+            border: 2px solid orange;
+        }
+        & a:hover{
+            color: white;
+        }
+        & button:hover{
+            background-color: orange;
+            color: white;
+            transition: 0.3s; 
+        }
+            }
+        }
+    }
+}
+
+@keyframes scrolldown{
+    from{
+        opacity: 0;
+        transform: translateY(20px) scale(0.5);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+.footer{
+    width: 100%;
+    height: 50vh;
+    background-color: rgba(84, 82, 82, 0.344);
+    position: relative;
+    margin-top: 10000px;
+    & .footer_con{
+        width: 100%;
+        height: 75%;
+        display: flex;
+        justify-content: space-between;
+        & .abt{
+            padding: 15px 0; 
+            margin-left: 100px;
+            & h1{
+                padding: 15px 0;
+                font-size: 35px; 
+                color: white;
+                transition: 0.3s;
+            }
+            & h1:hover{
+                transition: 0.3s;
+                color: orange;
+            }
+            & p{
+                padding: 8px 0px;
+                font-size: 20px;
+                color: gray;
+                transition: 0.3s;
+            }
+            & p:hover{
+                transition: 0.3s;
+                color: white;
+            }
+        }
+        & .connect{
+            width: 450px;
+            height: auto;
+            padding: 10px 0px;
+            margin-top: 10px;
+            
+        }
+        & h1{
+                padding: 15px 0;
+                font-size: 35px; 
+                color: white;
+                transition: 0.3s;
+            }
+        & h1:hover{
+                transition: 0.3s;
+                color: orange;
+            }
+        & p{
+            padding: 15px 0;
+            font-size: 20px;
+            color: gray;
+        }
+        & a{
+            position: absolute;
+            text-decoration: none;
+            font-size: 20px;
+            background-color: white;
+            padding: 13px 25px;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+        & a:hover{
+            transition: 0.3s;
+            background-color: rgb(131, 6, 6);
+        }
+        & .spp{
+            margin-top: 80px;
+        }
+    }
+    & .icon{
+        position: absolute;
+        display: flex;
+        top: 20%;
+        height: 50px;
+        width: 100%;
+        left: 71%;
+        a{
+            background-color: transparent;
+        }
+        & a:hover{
+            background-color: transparent;
+        }
+        
+        & .icon_img{
+            height:60px;
+            width: 120px;
+        }
+        & .icon_img1{
+            height: 57px;
+            width: 80px;
+        }
+        & .icon_img2{
+            height: 60px;
+            width: 100px;
+        }
+        & .icon_img3{
+            height: 57px;
+            width: 80px;
+        }
+        & .icon_img4{
+            height: 55px;
+            width: 120px;
+        }
+    }
+    
+}
+& .by{
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & img{
+        width: 90px;
+        height: 90px;
+        object-fit: cover;
+    }
+    & p{
+        color: gray;
+        font-size: 20px;
+    }
+}
+
